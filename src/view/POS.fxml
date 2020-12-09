@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="334.0" layoutY="14.0" text="Basic Coffee Types">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="POSta" prefHeight="454.0" prefWidth="200.0" wrapText="true" />
+      <Button layoutX="223.0" layoutY="62.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="96.0" text="House Blend" />
+      <Button layoutX="348.0" layoutY="62.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="96.0" text="Dark Roast" />
+      <Button layoutX="478.0" layoutY="62.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="96.0" text="Decaf" />
+      <Label layoutX="356.0" layoutY="161.0" text="Condiments">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="286.0" layoutY="213.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="96.0" text="Steamed Milk" />
+      <Button layoutX="409.0" layoutY="213.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="96.0" text="Soy Milk" />
+      <Button defaultButton="true" layoutX="356.0" layoutY="370.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="96.0" style="-fx-background-color: #FF0000;" text="ORDER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
