@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,22 +22,23 @@ public class Demo extends Application {
 	final public static double steamedMilkPrice = 0.50;
 	final public static double soyMilkPrice = 0.75;
 	public static double price = 0.0;
-	public static String totalOrder;
 	final public static double tax = 0.08675;
 	public static double addTaxAndPrice = 0.0;
 	
+	DecimalFormat df = new DecimalFormat("####.##");
+
 	public static void main(String[] args) {
 		Connection conn = null;
 		conn = ConnectionUtil.getConnection();
 		try {
 			Statement statement = conn.createStatement();
 			statement.setQueryTimeout(30);	//not required, if DB doesnt respond in 30 seconds, it will quit. not required by good to have
-//			statement.executeUpdate("INSERT INTO coffeeOrders(price, coffeeOrder) "
-//						+ "VALUES('9.66','blah')");
-//			ResultSet rs = statement.executeQuery("SELECT * FROM coffeeOrders");
-//			while(rs.next()) {
-//				System.out.println("Price: " + rs.getDouble("price") + ". CoffeeOrders: " + rs.getString("coffeeOrder"));
-//			}
+			ResultSet rs = statement.executeQuery("SELECT * FROM coffeeOrders");
+
+			while(rs.next()) {
+				System.out.println("Price: " + rs.getDouble("price") + ". CoffeeOrders: " + rs.getString("coffeeOrder"));
+			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
