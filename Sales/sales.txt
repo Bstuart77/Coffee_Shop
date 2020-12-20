@@ -1,0 +1,5 @@
+PRICE: 5.16 ORDER: House Blend, Dark Roast, Steamed Milk, 
+PRICE: 8.97 ORDER: House Blend, Dark Roast, Steamed Milk, Dark Roast, Soy Milk, Steamed Milk, 
+PRICE: 16.3 ORDER: Decaf, Decaf, Decaf, Decaf, Decaf, Decaf, 
+PRICE: 22.01 ORDER: House Blend, House Blend, Dark Roast, Decaf, Dark Roast, Decaf, Dark Roast, Steamed Milk, Soy Milk, Decaf, Soy Milk, 
+PRICE: 9.78 ORDER: Reuben Sandwhich, Whipped Milk, Whipped Milk, Whipped Milk, Whipped Milk, Whipped Milk, Whipped Milk, Whipped Milk, Whipped Milk, 
