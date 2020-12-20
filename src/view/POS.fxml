@@ -1,34 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
-   <children>
-      <Label layoutX="334.0" layoutY="14.0" text="Basic Coffee Types">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextArea fx:id="ta" prefHeight="401.0" prefWidth="200.0" style="-fx-background-color: grey;" wrapText="true" />
-      <Button layoutX="223.0" layoutY="62.0" mnemonicParsing="false" onAction="#writeHouseBlend" prefHeight="43.0" prefWidth="96.0" text="House Blend" />
-      <Button layoutX="348.0" layoutY="62.0" mnemonicParsing="false" onAction="#writeDarkRoast" prefHeight="43.0" prefWidth="96.0" text="Dark Roast" />
-      <Button layoutX="478.0" layoutY="62.0" mnemonicParsing="false" onAction="#writeDecaf" prefHeight="43.0" prefWidth="96.0" text="Decaf" />
-      <Label layoutX="356.0" layoutY="161.0" text="Condiments">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="286.0" layoutY="213.0" mnemonicParsing="false" onAction="#writeSteamedMilk" prefHeight="43.0" prefWidth="96.0" text="Steamed Milk" />
-      <Button layoutX="409.0" layoutY="213.0" mnemonicParsing="false" onAction="#writeSoyMilk" prefHeight="43.0" prefWidth="96.0" text="Soy Milk" />
-      <Button defaultButton="true" layoutX="361.0" layoutY="365.0" mnemonicParsing="false" onAction="#submitOrder" prefHeight="52.0" prefWidth="96.0" style="-fx-background-color: #FF0000;" text="ORDER">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
-      <TextArea fx:id="priceArea" layoutY="401.0" prefHeight="52.0" prefWidth="200.0" />
-   </children>
-</AnchorPane>
+<BorderPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="ta" editable="false" prefHeight="401.0" prefWidth="300.0" style="-fx-background-color: grey;" wrapText="true" />
+            <TextArea fx:id="priceArea" editable="false" prefHeight="52.0" prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <VBox spacing="50.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <Label contentDisplay="BOTTOM" text="Items">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ScrollPane prefHeight="100.0" prefWidth="300.0">
+                     <content>
+                        <HBox fx:id="menuBox" alignment="CENTER" spacing="10.0" />
+                     </content>
+                  </ScrollPane>
+               </graphic>
+            </Label>
+            <Label contentDisplay="BOTTOM" text="Condiments">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ScrollPane prefHeight="100.0" prefWidth="300.0">
+                     <content>
+                        <HBox fx:id="condimentBox" spacing="10.0" />
+                     </content>
+                  </ScrollPane>
+               </graphic>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="263.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../Pictures/Saved%20Pictures/coffee.png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" spacing="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#submitOrder" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="ORDER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#clear" prefHeight="50.0" prefWidth="100.0" text="CLEAR" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
