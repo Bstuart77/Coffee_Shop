@@ -5,10 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionUtil {
+
 	public static Connection getConnection() { // checks to see if JAR JDBC is downloaded on project folder
 		try {
 			Class.forName("org.sqlite.JDBC");
-			return DriverManager.getConnection("jdbc:sqlite:data/db/CoffeeShopDB.sqlite"); // check if DB exists, if no create one
+			return DriverManager.getConnection("jdbc:sqlite:data/db/CoffeeShopDB.sqlite"); // check if DB exists, if no
+																							// create one
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
